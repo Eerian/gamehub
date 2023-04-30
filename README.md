@@ -1,0 +1,3 @@
+# GameHub
+
+Simple game store
