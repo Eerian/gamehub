@@ -64,3 +64,102 @@ nav button {
 .username {
   color: rgb(234, 243, 249);
 }
+label,
+input {
+  display: block;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background: rgb(24, 117, 189);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid rgb(196, 34, 34);
+  color: rgb(196, 34, 34);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+input.error {
+  border: 1px solid rgb(196, 34, 34);
+}
+
+.game-card {
+  width: 200px;
+  height: 370px;
+  border: 1px solid rgb(213, 202, 202);
+  margin: 5px;
+  padding-left: 10px;
+}
+
+.game-image {
+  width: 200px;
+  height: 230px;
+  object-fit: cover;
+}
+
+.all-games {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fa-cart-shopping {
+  font-size: 170%;
+  margin-top: 18px;
+  color: white;
+}
+
+.shopping-cart-badge {
+  margin-top: 20px;
+}
+
+.shopping-cart-icon {
+  color: white;
+}
+
+.fa-cart-plus {
+  font-size: 130%;
+  margin-right: 10px;
+}
+
+.add-to-cart-button {
+  padding: 2px;
+  background-color: rgb(89, 120, 222);
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  padding-right: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.cart-item {
+  width: 300px;
+  height: 250px;
+  border: 1px solid black;
+}
+
+.cart-item-img {
+  width: 200px;
+  height: 100px;
+}
