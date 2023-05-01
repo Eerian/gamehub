@@ -4,6 +4,7 @@ const Context = React.createContext()
 
 function ContextProvider(props) {
   const [allGames, setAllGames] = useState([])
+  const [cartItems, setCartItems] = useState([])
 
   useEffect(() => {
     fetchData()
@@ -35,10 +36,29 @@ function ContextProvider(props) {
     }
   }
 
+  function addToCart(game) {
+    // setCartItems(prevItems => [...prevItems, game])
+    const itemExists = cartItems.find((item) => item.id === game.id)
+
+    if (itemExists) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === game.id
+            ? { ...itemExists, count: itemExists.count + 1 }
+            : item
+        )
+      )
+    } else {
+      setCartItems([...cartItems, game])
+    }
+  }
+
   return (
     <Context.Provider
       value={{
         allGames,
+        cartItems,
+        addToCart,
       }}
     >
       {props.children}
