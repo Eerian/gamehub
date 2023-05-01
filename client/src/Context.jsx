@@ -10,6 +10,19 @@ function ContextProvider(props) {
     fetchData()
   }, [])
 
+  //retrieve cart from localStorage
+  useEffect(() => {
+    const cartFromLocalStorage = JSON.parse(
+      localStorage.getItem('cart') || '[]'
+    )
+    setCartItems(cartFromLocalStorage)
+  }, [])
+
+  //store cart items in local storage
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartItems))
+  }, [cartItems])
+
   async function fetchData() {
     const options = {
       method: 'GET',
@@ -53,12 +66,38 @@ function ContextProvider(props) {
     }
   }
 
+  function removeFromCart(game) {
+    // setCartItems(prevItems => prevItems.filter(item => item.id !== id))
+    const itemExists = cartItems.find((item) => item.id === game.id)
+
+    if (itemExists.count === 1) {
+      setCartItems(cartItems.filter((item) => item.id !== game.id))
+    } else {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === game.id
+            ? { ...itemExists, count: itemExists.count - 1 }
+            : item
+        )
+      )
+    }
+  }
+
+  function removeAllItems() {
+    setCartItems([])
+  }
+
+  console.log(cartItems)
+
   return (
     <Context.Provider
       value={{
         allGames,
         cartItems,
+        setCartItems,
         addToCart,
+        removeFromCart,
+        removeAllItems,
       }}
     >
       {props.children}

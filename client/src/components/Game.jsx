@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import { Context } from '../Context'
 
 function Game({ game }) {
+  const { addToCart } = useContext(Context)
+
   return (
     <div className="game-card">
       <a href={`/game/${game.id}`}>
@@ -13,7 +15,7 @@ function Game({ game }) {
       <h4>{game.name}</h4>
       <p>{`Price: $${game.price}`}</p>
       {/* <button className="add-to-cart-button"><i class="fa-sharp fa-solid fa-cart-plus"></i>Add To Cart</button> */}
-      <Button size="small" variant="contained">
+      <Button size="small" variant="contained" onClick={() => addToCart(game)}>
         <AddShoppingCartIcon />
         Add to Cart
       </Button>

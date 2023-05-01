@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../Context'
 import { Link } from 'react-router-dom'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import Badge from '@mui/material/Badge'
 
 function Header() {
+  const { cartItems } = useContext(Context)
+  const totalItemsInCart = cartItems.reduce((acc, item) => acc + item.count, 0)
+
   return (
     <header>
       <Link to="/">
@@ -12,7 +16,11 @@ function Header() {
           src="https://res.cloudinary.com/eerian/image/upload/v1667698511/game-hub-high-resolution-logo-color-on-transparent-background_tdfrql.png"
         />
       </Link>
-      <Badge className="shopping-cart-badge" badgeContent={0} color="primary">
+      <Badge
+        className="shopping-cart-badge"
+        badgeContent={totalItemsInCart}
+        color="primary"
+      >
         {/* <Link to="/cart"><i className={cartBadge}></i></Link> */}
         <Link to="/cart">
           <ShoppingCartIcon fontSize="large" className="shopping-cart-icon" />
