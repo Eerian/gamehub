@@ -351,6 +351,32 @@ hr {
   width: 30%;
 }
 
+.game-details-page {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-details-img {
+  max-width: 800px;
+}
+
+.game-description-text {
+  font-weight: 300;
+  color: rgb(73, 71, 71);
+}
+
+.game-comments-section {
+  width: 800px;
+  margin-bottom: 10%;
+}
+
+.game-reviews {
+  margin-bottom: 100px;
+}
+
 footer {
   background: rgb(2, 0, 36);
   background: linear-gradient(

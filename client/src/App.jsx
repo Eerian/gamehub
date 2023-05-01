@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Games from './components/Games'
 import Cart from './components/Cart'
 import Footer from './components/Footer'
+import GameDetails from './components/GameDetails'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Games />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/game/:gameId" element={<GameDetails />}></Route>
         </Routes>
         <Footer />
       </div>
