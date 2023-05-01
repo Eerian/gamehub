@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import Header from './components/Header'
 import Games from './components/Games'
 import Cart from './components/Cart'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/" element={<Games />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   )

@@ -350,3 +350,20 @@ hr {
   text-align: center;
   width: 30%;
 }
+
+footer {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 4%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  position: fixed;
+  bottom: 0;
+}
