@@ -37,7 +37,7 @@ function Header() {
       <nav>
         {user && (
           <div>
-            <span className="username">{`Hi, ${user.email}`}</span>
+            <span className="username">{`Hi, ${user.username}`}</span>
             <button onClick={handleClick}>Log out</button>
           </div>
         )}
