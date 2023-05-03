@@ -3,10 +3,16 @@ import { Context } from '../Context'
 import { Link } from 'react-router-dom'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import Badge from '@mui/material/Badge'
+import { useLogout } from '../hooks/useLogout'
 
 function Header() {
   const { cartItems } = useContext(Context)
   const totalItemsInCart = cartItems.reduce((acc, item) => acc + item.count, 0)
+  const { logout } = useLogout()
+
+  const handleClick = () => {
+    logout()
+  }
 
   return (
     <header>
@@ -29,7 +35,7 @@ function Header() {
       <nav>
         <div>
           <span>Hi username</span>
-          <button>Log out</button>
+          <button onClick={handleClick}>Log out</button>
         </div>
         <div>
           <Link to="/login">Login</Link>
