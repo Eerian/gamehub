@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import Badge from '@mui/material/Badge'
 import { useLogout } from '../hooks/useLogout'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 function Header() {
   const { cartItems } = useContext(Context)
   const totalItemsInCart = cartItems.reduce((acc, item) => acc + item.count, 0)
   const { logout } = useLogout()
+  const { user } = useAuthContext()
 
   const handleClick = () => {
     logout()
@@ -33,14 +35,18 @@ function Header() {
         </Link>
       </Badge>
       <nav>
-        <div>
-          <span>Hi username</span>
-          <button onClick={handleClick}>Log out</button>
-        </div>
-        <div>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Signup</Link>
-        </div>
+        {user && (
+          <div>
+            <span className="username">{`Hi, ${user.email}`}</span>
+            <button onClick={handleClick}>Log out</button>
+          </div>
+        )}
+        {!user && (
+          <div>
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Signup</Link>
+          </div>
+        )}
       </nav>
     </header>
   )
