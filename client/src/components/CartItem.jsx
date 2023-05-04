@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Context } from '../Context'
+import { Context } from '../context/Context'
 
 function CartItem({ game }) {
   const { removeFromCart, addToCart, setCartItems } = useContext(Context)

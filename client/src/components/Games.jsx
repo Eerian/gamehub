@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Game from './Game'
-import { Context } from '../Context'
+import { Context } from '../context/Context'
 
 function Games() {
   const { allGames } = useContext(Context)

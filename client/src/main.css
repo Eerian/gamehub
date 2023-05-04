@@ -102,11 +102,25 @@ input.error {
 }
 
 .game-card {
+  border: 2px solid rgb(213, 229, 241);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 200px;
-  height: 370px;
-  border: 1px solid rgb(213, 202, 202);
   margin: 5px;
-  padding-left: 10px;
+}
+
+.game-title,
+.game-price {
+  margin-left: 5px;
+}
+
+.game-price {
+  margin-bottom: 20px;
+}
+
+.game-card:hover {
+  border: 2px solid rgb(69, 151, 219);
 }
 
 .game-image {
@@ -115,9 +129,14 @@ input.error {
   object-fit: cover;
 }
 
+.add-to-cart-btn {
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
 .all-games {
-  max-width: 1200px;
   margin: 0 auto;
+  max-width: 1080px;
   padding-bottom: 100px;
   display: flex;
   flex-wrap: wrap;
@@ -163,13 +182,15 @@ input.error {
   width: 200px;
   height: 100px;
 }
-* .cart-items-list {
+
+.cart-items-list {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
 }
-*/ .cart-container {
+
+.cart-container {
   width: 70%;
   margin-top: 5px;
   margin-left: 15%;
