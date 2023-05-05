@@ -1,20 +1,20 @@
-import React, { useContext } from 'react'
-import { Context } from '../context/Context'
-import { Link } from 'react-router-dom'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import Badge from '@mui/material/Badge'
-import { useLogout } from '../hooks/useLogout'
-import { useAuthContext } from '../hooks/useAuthContext'
+import React, { useContext } from "react";
+import { Context } from "../context/Context";
+import { Link } from "react-router-dom";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Badge from "@mui/material/Badge";
+import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 function Header() {
-  const { cartItems } = useContext(Context)
-  const totalItemsInCart = cartItems.reduce((acc, item) => acc + item.count, 0)
-  const { logout } = useLogout()
-  const { user } = useAuthContext()
+  const { cartItems } = useContext(Context);
+  const totalItemsInCart = cartItems.reduce((acc, item) => acc + item.count, 0);
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
 
   const handleClick = () => {
-    logout()
-  }
+    logout();
+  };
 
   return (
     <header>
@@ -38,18 +38,24 @@ function Header() {
         {user && (
           <div>
             <span className="username">{`Hi, ${user.username}`}</span>
-            <button onClick={handleClick}>Log out</button>
+            <button className="nav-logout-btn" onClick={handleClick}>
+              Log out
+            </button>
           </div>
         )}
         {!user && (
           <div>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
+            <Link to="/login" className="nav-login-btn">
+              Login
+            </Link>
+            <Link to="/signup" className="nav-signup-btn">
+              Signup
+            </Link>
           </div>
         )}
       </nav>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;
