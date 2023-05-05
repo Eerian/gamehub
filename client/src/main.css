@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   background: linear-gradient(to bottom right, #e3f0ff, #fafcff);
   height: 100vh;
 }
@@ -18,6 +18,7 @@ header {
   );
 }
 
+/* Header styles */
 header h2,
 i {
   color: white;
@@ -37,18 +38,9 @@ nav {
   display: flex;
   align-items: center;
 }
+
 nav a {
   margin-left: 10px;
-}
-/* auth forms */
-form.signup,
-form.login {
-  display: block;
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 25px;
-  background: #fff;
-  border-radius: 4px;
 }
 
 nav button {
@@ -61,15 +53,28 @@ nav button {
   font-size: 1em;
   margin-left: 10px;
 }
+
 .username {
   color: rgb(234, 243, 249);
 }
-label,
-input {
+
+/* auth forms styles*/
+form.signup,
+form.login {
+  display: block;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+form label,
+form input {
   display: block;
 }
 
-input {
+form input {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -88,7 +93,7 @@ form button {
   cursor: pointer;
 }
 
-div.error {
+.auth-error {
   padding: 10px;
   background: #ffefef;
   border: 1px solid rgb(196, 34, 34);
@@ -97,8 +102,14 @@ div.error {
   margin: 20px 0;
 }
 
-input.error {
+form input.auth-error {
   border: 1px solid rgb(196, 34, 34);
+}
+
+/* Game card styles */
+.game-title,
+.game-price {
+  margin-left: 5px;
 }
 
 .game-card {
@@ -108,11 +119,6 @@ input.error {
   justify-content: space-between;
   width: 200px;
   margin: 5px;
-}
-
-.game-title,
-.game-price {
-  margin-left: 5px;
 }
 
 .game-price {
@@ -172,6 +178,7 @@ input.error {
   cursor: pointer;
 }
 
+/* Cart container list */
 .cart-item {
   width: 300px;
   height: 250px;
@@ -200,7 +207,7 @@ input.error {
   box-shadow: 0px 25px 40px #1687d933;
 }
 
-.header {
+.cart-header {
   margin: auto;
   width: 90%;
   height: 15%;
@@ -209,13 +216,13 @@ input.error {
   align-items: center;
 }
 
-.heading {
+.cart-heading {
   font-size: 20px;
   font-weight: 700;
   color: #2f3841;
 }
 
-.action {
+.remove-all-btn {
   font-size: 14px;
   font-weight: 600;
   color: #e44c4c;
@@ -232,12 +239,12 @@ input.error {
   align-items: center;
 }
 
-.image-box {
+.cart-image-box {
   width: 15%;
   text-align: center;
 }
 
-.image-box img {
+.cart-image-box img {
   width: 100%;
 }
 
@@ -246,7 +253,7 @@ input.error {
   width: 50%;
 }
 
-.title {
+.cart-item-title {
   padding-top: 5px;
   line-height: 10px;
   font-size: 25px;
@@ -254,21 +261,21 @@ input.error {
   color: #202020;
 }
 
-.subtitle {
+.cart-item-subtitle {
   line-height: 10px;
   font-size: 15px;
   font-weight: 600;
   color: #909090;
 }
 
-.counter {
+.cart-item-counter {
   width: 15%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.btn {
+.change-item-count-btn {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -282,33 +289,25 @@ input.error {
   cursor: pointer;
 }
 
-.count {
+.game-count {
   font-size: 20px;
   font-weight: 900;
   color: #202020;
 }
 
-.prices {
+.game-item-prices {
   height: 100%;
   text-align: right;
 }
 
-.amount {
+.game-item-price {
   padding-top: 20px;
   font-size: 26px;
   font-weight: 800;
   color: #202020;
 }
 
-.save {
-  padding-top: 5px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #1687d9;
-  cursor: pointer;
-}
-
-.remove {
+.remove-cart-item {
   padding-top: 5px;
   font-size: 14px;
   font-weight: 600;
@@ -328,32 +327,32 @@ hr {
   width: 28%;
 }
 
-.total {
+.cart-total {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.subtotal {
+.cart-subtotal {
   font-size: 22px;
   font-weight: 700;
   color: #202020;
 }
 
-.items {
+.total-cart-items {
   font-size: 16px;
   font-weight: 500;
   color: #909090;
   line-height: 10px;
 }
 
-.total-amount {
+.total-cart-amount {
   font-size: 36px;
   font-weight: 900;
   color: #202020;
 }
 
-.button {
+.checkout-btn {
   margin-top: 5px;
   width: 100%;
   height: 40px;
@@ -366,12 +365,13 @@ hr {
   color: #202020;
 }
 
-.no-items {
+.no-items-message {
   margin: 0 auto;
   text-align: center;
   width: 30%;
 }
 
+/* game details styles */
 .game-details-page {
   max-width: 800px;
   margin: 0 auto;
@@ -398,6 +398,7 @@ hr {
   margin-bottom: 100px;
 }
 
+/* footer styles */
 footer {
   background: rgb(2, 0, 36);
   background: linear-gradient(

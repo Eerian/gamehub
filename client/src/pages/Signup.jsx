@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import { useSignup } from '../hooks/useSignup'
+import { useState } from "react";
+import { useSignup } from "../hooks/useSignup";
 
 const Signup = () => {
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const { signup, error, isLoading } = useSignup()
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signup, error, isLoading } = useSignup();
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    await signup(username, email, password)
-  }
+    await signup(username, email, password);
+  };
 
   return (
     <form className="signup" onSubmit={handleSubmit}>
@@ -36,9 +36,9 @@ const Signup = () => {
       />
 
       <button disabled={isLoading}>Sign up</button>
-      {error && <div className="error">{error}</div>}
+      {error && <div className="auth-error">{error}</div>}
     </form>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;
