@@ -13,7 +13,7 @@ function CartItem({ game }) {
       <div className="cart-image-box">
         <img src={game.background_image} style={{ height: "120px" }} />
       </div>
-      <div className="about">
+      <div className="cart-item-info">
         <h1 className="cart-item-title">{game.name}</h1>
         <h3 className="cart-item-subtitle">Release Date: {game.released}</h3>
         <h3 className="cart-item-subtitle">Genre: {game.genres[0].name}</h3>
