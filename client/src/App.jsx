@@ -1,21 +1,21 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import { Routes, Route, Navigate } from "react-router-dom";
-import { useAuthContext } from "./hooks/useAuthContext";
-import Header from "./components/Header";
-import Games from "./components/Games";
-import Cart from "./components/Cart";
-import Footer from "./components/Footer";
-import GameDetails from "./components/GameDetails";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { useAuthContext } from './hooks/useAuthContext'
+import Header from './components/Header'
+import Games from './components/Games'
+import Cart from './components/Cart'
+import Footer from './components/Footer'
+import GameDetails from './components/GameDetails'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
 
 function App() {
-  const { user } = useAuthContext();
+  const { user } = useAuthContext()
 
   return (
     <BrowserRouter>
-      <div className="app-container">
+      <div>
         <Header />
         <Routes>
           <Route exact path="/" element={<Games />}></Route>
@@ -33,7 +33,7 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

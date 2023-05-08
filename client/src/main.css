@@ -6,12 +6,6 @@ body {
   height: 100vh;
 }
 
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 header {
   display: flex;
   justify-content: space-around;
@@ -139,7 +133,6 @@ form input.auth-error {
   justify-content: space-between;
   width: 200px;
   margin: 5px;
-  background: #d3eef9;
 }
 
 .game-price {
@@ -222,8 +215,7 @@ form input.auth-error {
   width: 70%;
   margin-top: 5px;
   margin-left: 15%;
-  padding-bottom: 20px;
-  margin-bottom: 40px;
+  padding-bottom: 120px;
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0px 25px 40px #1687d933;
@@ -270,7 +262,7 @@ form input.auth-error {
   width: 100%;
 }
 
-.cart-item-info {
+.about {
   height: 100%;
   width: 50%;
 }
@@ -431,7 +423,8 @@ footer {
   );
   width: 100%;
   color: white;
-  margin-top: auto;
+  position: fixed;
+  bottom: 0;
 }
 
 .footer-container {
@@ -446,9 +439,8 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 5px;
-  font-size: 70%;
+  font-size: 90%;
   gap: 10px;
-  text-transform: uppercase;
 }
 
 .social-media-icons {
