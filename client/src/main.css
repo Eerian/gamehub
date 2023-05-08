@@ -6,6 +6,12 @@ body {
   height: 100vh;
 }
 
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   display: flex;
   justify-content: space-around;
@@ -76,7 +82,7 @@ nav a {
 form.signup,
 form.login {
   display: block;
-  max-width: 400px;
+  width: 350px;
   margin: 40px auto;
   padding: 25px;
   background: #fff;
@@ -133,6 +139,7 @@ form input.auth-error {
   justify-content: space-between;
   width: 200px;
   margin: 5px;
+  background: #d3eef9;
 }
 
 .game-price {
@@ -215,7 +222,8 @@ form input.auth-error {
   width: 70%;
   margin-top: 5px;
   margin-left: 15%;
-  padding-bottom: 120px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0px 25px 40px #1687d933;
@@ -262,7 +270,7 @@ form input.auth-error {
   width: 100%;
 }
 
-.about {
+.cart-item-info {
   height: 100%;
   width: 50%;
 }
@@ -423,8 +431,7 @@ footer {
   );
   width: 100%;
   color: white;
-  position: fixed;
-  bottom: 0;
+  margin-top: auto;
 }
 
 .footer-container {
@@ -439,8 +446,9 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 5px;
-  font-size: 90%;
+  font-size: 70%;
   gap: 10px;
+  text-transform: uppercase;
 }
 
 .social-media-icons {
